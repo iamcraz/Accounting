@@ -1,0 +1,6 @@
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Utilities\bin\Debug\Accounting_Utilities.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Utilities\bin\Debug\Accounting_Utilities.pdb
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Utilities\obj\Debug\Accounting_Utilities.csproj.CoreCompileInputs.cache
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Utilities\obj\Debug\Accounting_Utilities.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Utilities\obj\Debug\Accounting_Utilities.pdb
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Utilities\obj\Debug\Accounting_Utilities.csprojAssemblyReference.cache
