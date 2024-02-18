@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Accounting_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accounting_">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_ID" Type="int" Nullable="false" />
+    <Property Name="Type_ID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="Discription" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Accounting_Types">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="TypeTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Customer_id" />
+    </Key>
+    <Property Name="Customer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Customer_mobile" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Customer_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_image" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Userpass" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Accounting__Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Accounting_" Type="Self.Accounting_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Customer_id" />
+      </Principal>
+      <Dependent Role="Accounting_">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Accounting_DBModelStoreContainer">
+    <EntitySet Name="Accounting_" EntityType="Self.Accounting_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Accounting_Types" EntityType="Self.Accounting_Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Accounting__Customers" Association="Self.FK_Accounting__Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Accounting_" EntitySet="Accounting_" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

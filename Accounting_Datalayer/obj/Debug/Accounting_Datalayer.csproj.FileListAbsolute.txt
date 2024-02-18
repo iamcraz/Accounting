@@ -1,0 +1,14 @@
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\Accounting_Datalayer.dll.config
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\Accounting_Datalayer.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\Accounting_Datalayer.pdb
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\EntityFramework.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\EntityFramework.xml
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\obj\Debug\Accounting_Datalayer.csproj.CoreCompileInputs.cache
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\obj\Debug\Accounting_Datalayer.csproj.CopyComplete
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\obj\Debug\Accounting_Datalayer.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\obj\Debug\Accounting_Datalayer.pdb
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\obj\Debug\Accounting_Datalayer.csprojAssemblyReference.cache
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\Accounting_Viewmodel.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Datalayer\bin\Debug\Accounting_Viewmodel.pdb

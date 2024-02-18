@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Accounting_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounting_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Type_ID" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="Discription" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Accounting_Types">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="TypeTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Customer_id" />
+          </Key>
+          <Property Name="Customer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer_mobile" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Customer_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Customer_image" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Userpass" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Accounting__Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Accounting_" Type="Self.Accounting_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Customer_id" />
+            </Principal>
+            <Dependent Role="Accounting_">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Accounting_DBModelStoreContainer">
+          <EntitySet Name="Accounting_" EntityType="Self.Accounting_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Accounting_Types" EntityType="Self.Accounting_Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Accounting__Customers" Association="Self.FK_Accounting__Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Accounting_" EntitySet="Accounting_" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Accounting_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Customer_id" />
+          </Key>
+          <Property Name="Customer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Accounting_" Relationship="Accounting_DBModel.FK_Accounting__Customers1" FromRole="Customers" ToRole="Accounting_" />
+        </EntityType>
+        <EntityContainer Name="Accounting_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customers" />
+          <EntitySet Name="Accounting_" EntityType="Accounting_DBModel.Accounting_" />
+          <EntitySet Name="Accounting_Types" EntityType="Accounting_DBModel.Accounting_Types" />
+          <AssociationSet Name="FK_Accounting__Customers" Association="Accounting_DBModel.FK_Accounting__Customers">
+            <End Role="Accounting_Types" EntitySet="Accounting_Types" />
+            <End Role="Accounting_" EntitySet="Accounting_" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Accounting__Customers1" Association="Accounting_DBModel.FK_Accounting__Customers1">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Accounting_" EntitySet="Accounting_" />
+          </AssociationSet>
+          <EntitySet Name="login" EntityType="Accounting_DBModel.login" />
+        </EntityContainer>
+        <EntityType Name="Accounting_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Type_ID" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="Discription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date_time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Accounting_Types" Relationship="Accounting_DBModel.FK_Accounting__Customers" FromRole="Accounting_" ToRole="Accounting_Types" />
+          <NavigationProperty Name="Customers" Relationship="Accounting_DBModel.FK_Accounting__Customers1" FromRole="Accounting_" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="Accounting_Types">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="TypeTitle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounting_" Relationship="Accounting_DBModel.FK_Accounting__Customers" FromRole="Accounting_Types" ToRole="Accounting_" />
+        </EntityType>
+        <Association Name="FK_Accounting__Customers">
+          <End Type="Accounting_DBModel.Accounting_Types" Role="Accounting_Types" Multiplicity="1" />
+          <End Type="Accounting_DBModel.Accounting_" Role="Accounting_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounting_Types">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Accounting_">
+              <PropertyRef Name="Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Accounting__Customers1">
+          <End Type="Accounting_DBModel.Customers" Role="Customers" Multiplicity="1" />
+          <End Type="Accounting_DBModel.Accounting_" Role="Accounting_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Customer_id" />
+            </Principal>
+            <Dependent Role="Accounting_">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Userpass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Accounting_DBModelStoreContainer" CdmEntityContainer="Accounting_DBEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Accounting_DBModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
+                <ScalarProperty Name="Customer_fullname" ColumnName="Customer_fullname" />
+                <ScalarProperty Name="Customer_mobile" ColumnName="Customer_mobile" />
+                <ScalarProperty Name="Customer_Email" ColumnName="Customer_Email" />
+                <ScalarProperty Name="Customer_address" ColumnName="Customer_address" />
+                <ScalarProperty Name="Customer_image" ColumnName="Customer_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounting_">
+            <EntityTypeMapping TypeName="Accounting_DBModel.Accounting_">
+              <MappingFragment StoreEntitySet="Accounting_">
+                <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounting_Types">
+            <EntityTypeMapping TypeName="Accounting_DBModel.Accounting_Types">
+              <MappingFragment StoreEntitySet="Accounting_Types">
+                <ScalarProperty Name="TypeTitle" ColumnName="TypeTitle" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="Accounting_DBModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="Userpass" ColumnName="Userpass" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
