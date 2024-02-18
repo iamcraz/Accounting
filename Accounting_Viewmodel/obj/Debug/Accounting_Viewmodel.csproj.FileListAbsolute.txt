@@ -1,0 +1,5 @@
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Viewmodel\bin\Debug\Accounting_Viewmodel.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Viewmodel\bin\Debug\Accounting_Viewmodel.pdb
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Viewmodel\obj\Debug\Accounting_Viewmodel.csproj.CoreCompileInputs.cache
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Viewmodel\obj\Debug\Accounting_Viewmodel.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Viewmodel\obj\Debug\Accounting_Viewmodel.pdb
