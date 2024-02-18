@@ -1,0 +1,5 @@
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Bussiness\bin\Debug\Accounting_Bussiness.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Bussiness\bin\Debug\Accounting_Bussiness.pdb
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Bussiness\obj\Debug\Accounting_Bussiness.csproj.CoreCompileInputs.cache
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Bussiness\obj\Debug\Accounting_Bussiness.dll
+D:\c# course\C# course_Advance\Accounting_App\Accounting_Bussiness\obj\Debug\Accounting_Bussiness.pdb
