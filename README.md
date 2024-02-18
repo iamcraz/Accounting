@@ -1,1 +1,1 @@
-Hi, its a basic Accounting app and worked with Persian language .
+Hi, its a basic Windows form Accounting app and worked with Persian language .
